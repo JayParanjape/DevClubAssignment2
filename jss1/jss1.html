@@ -1,0 +1,44 @@
+<DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      body{
+        background-image: url(b.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .checked{
+        text-decoration: line-through;
+      }
+      li{
+        color: yellow;}
+
+    </style>
+    <script>
+    function mf(){
+      var li=document.createElement("li");
+      var value=document.getElementById("input").value;
+      var t=document.createTextNode(value);
+      li.appendChild(t);
+      document.getElementById("list").appendChild(li);
+      document.getElementById("input").value="";
+      var span = document.createElement("SPAN");
+ var txt = document.createTextNode("\u00D7");
+ span.className = "close";
+ span.appendChild(txt);
+ li.appendChild(span);
+    }
+
+    </script>
+  </head>
+  <body>
+
+    <form>
+      <input  value="keep clicking to enter" id="input" title="Your todos" type="text" align="center" ondblclick="mf()"></input>
+
+      <li id="list" class="checked">
+      </li>
+    </form>
+  </body>
+</html>
